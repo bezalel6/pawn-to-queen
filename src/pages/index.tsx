@@ -91,9 +91,9 @@ export default function Home() {
           </button>
 
           {/* Footer text */}
-          <p className="mt-8 text-xs tracking-widest text-zinc-600 uppercase">
-            Your move.
-          </p>
+          {/* <p className="mt-8 text-xs tracking-widest text-zinc-600 uppercase"> */}
+          {/* Your move. */}
+          {/* </p> */}
         </div>
       </main>
     </>

@@ -7,16 +7,21 @@ import "./src/env.js";
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+  basePath: process.env.NODE_ENV === "production" ? "/pawn-to-queen" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/pawn-to-queen/" : "",
 
   /**
-   * If you are using `appDir` then you must comment the below `i18n` config out.
-   *
-   * @see https://github.com/vercel/next.js/issues/41980
+   * i18n is not compatible with static export (output: "export")
+   * Commented out for GitHub Pages deployment
    */
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
+  // i18n: {
+  //   locales: ["en"],
+  //   defaultLocale: "en",
+  // },
 };
 
 export default config;

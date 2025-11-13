@@ -119,7 +119,7 @@ export default function Home() {
                   Your Path to Chess Mastery Starts Here
                 </h2>
                 <p className="mb-4 text-lg text-slate-600">
-                  With over 15 years of competitive chess experience and a FIDE rating of 2400+, I've
+                  With over 15 years of competitive chess experience and a FIDE rating of 2400+, I&apos;ve
                   helped hundreds of students achieve their chess goals.
                 </p>
                 <p className="mb-6 text-lg text-slate-600">
@@ -151,7 +151,7 @@ export default function Home() {
                 <div className="rounded-2xl border-2 border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100 p-12 text-center shadow-lg">
                   <div className="mb-6 text-8xl">♔</div>
                   <blockquote className="mb-4 text-xl font-medium italic text-slate-700">
-                    "Every chess master was once a beginner. The difference is they never gave up."
+                    &ldquo;Every chess master was once a beginner. The difference is they never gave up.&rdquo;
                   </blockquote>
                 </div>
               </div>
@@ -295,7 +295,7 @@ export default function Home() {
               </span>
               <h2 className="mb-4 text-4xl font-bold text-slate-900">What the Masters Say</h2>
               <p className="text-lg text-slate-600">
-                Real feedback from real students who've transformed their game
+                Real feedback from real students who&apos;ve transformed their game
               </p>
             </div>
 
@@ -315,7 +315,7 @@ export default function Home() {
                 Ready to Elevate Your Game?
               </h2>
               <p className="mb-8 text-xl text-slate-300">
-                Join hundreds of students who've transformed their chess with personalized coaching
+                Join hundreds of students who&apos;ve transformed their chess with personalized coaching
               </p>
               <button
                 onClick={() => console.log("💰")}

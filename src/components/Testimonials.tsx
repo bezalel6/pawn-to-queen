@@ -16,7 +16,7 @@ const Testimonials: React.FC = () => {
               className="group mb-8 rounded-lg bg-slate-50 p-6 transition-all duration-300 hover:bg-amber-50 hover:shadow-md"
             >
               <p className="mb-3 text-base leading-relaxed font-medium text-slate-700 md:text-lg">
-                "{testimonial.quote}"
+                &ldquo;{testimonial.quote}&rdquo;
               </p>
               <p className="text-sm tracking-wide text-slate-500">
                 — {testimonial.author}

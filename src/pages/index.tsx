@@ -43,7 +43,7 @@ export default function Home() {
         <Hero />
         <About />
         <Programs />
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
         <CTASection />
         <Footer />
       </main>

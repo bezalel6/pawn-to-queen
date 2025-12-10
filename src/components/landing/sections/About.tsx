@@ -14,9 +14,9 @@ export default function About() {
               Your Path to Chess Mastery Starts Here
             </h2>
             <p className="mb-4 text-lg text-slate-600">
-              With over 15 years of competitive chess experience and a FIDE
-              rating of 2400+, I&apos;ve helped hundreds of students achieve
-              their chess goals.
+              With over 10 years of competitive chess experience and a rating of
+              2200+, I&apos;ve helped hundreds of players achieve their chess
+              goals.
             </p>
             <p className="mb-6 text-lg text-slate-600">
               My coaching method combines classical chess principles with modern
@@ -31,7 +31,7 @@ export default function About() {
           </div>
           <div className="relative">
             <div className="rounded-2xl border-2 border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100 p-12 text-center shadow-lg">
-              <div className="mb-6 text-8xl">♔</div>
+              <div className="mb-6 text-8xl">[()]</div>
               <blockquote className="mb-4 text-xl font-medium text-slate-700 italic">
                 &ldquo;Every chess master was once a beginner. The difference is
                 they never gave up.&rdquo;

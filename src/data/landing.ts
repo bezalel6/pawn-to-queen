@@ -3,7 +3,7 @@ export const stats = [
   ["∞", "FIDE Rating"],
   ["500,000+", "Students Trained"],
   ["10+", "Years Experience"],
-  ["95%", "Success Rate"],
+  ["95%", "Promotion Rate"],
 ] as const;
 
 export const achievements = [

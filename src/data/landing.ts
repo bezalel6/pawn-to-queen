@@ -7,9 +7,9 @@ export const stats = [
 ] as const;
 
 export const achievements = [
-  "Internationaly Recognized Chess coach",
-  "Time's man of the year 1938",
-  "FIDE Aware Instructor",
+  "Internationally Recognized Chess Coach",
+  "FIDE Titled Student",
+  "99.89% Percentile",
 ] as const;
 
 // [icon, title, desc, price, duration, features, ctaText, ctaLink, badge?]

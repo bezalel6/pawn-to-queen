@@ -1,0 +1,36 @@
+import { programs } from "@/data/landing";
+import ProgramCard from "../ProgramCard";
+import SectionHeader from "../SectionHeader";
+
+export default function Programs() {
+  return (
+    <section
+      id="programs"
+      className="border-t border-slate-200 bg-slate-50 py-20"
+    >
+      <div className="container mx-auto px-4 md:px-8">
+        <SectionHeader
+          label="Training Programs"
+          title="Choose Your Training Plan"
+          description="Structured coaching programs designed to take your game to the next level"
+        />
+
+        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
+          {programs.map((program) => (
+            <ProgramCard
+              key={program.id}
+              icon={program.icon}
+              title={program.title}
+              description={program.description}
+              price={program.price}
+              duration={program.duration}
+              features={program.features}
+              highlighted={program.highlighted}
+              badge={program.badge}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

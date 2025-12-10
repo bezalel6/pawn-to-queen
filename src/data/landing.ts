@@ -1,29 +1,48 @@
 // [value, label]
 export const stats = [
-  ["2400+", "FIDE Rating"],
-  ["500+", "Students Trained"],
-  ["15+", "Years Experience"],
+  ["∞", "FIDE Rating"],
+  ["500,000+", "Students Trained"],
+  ["10+", "Years Experience"],
   ["95%", "Success Rate"],
 ] as const;
 
 export const achievements = [
-  "International Master Title",
-  "National Champion 2019",
-  "FIDE Certified Instructor",
+  "Internationaly Recognized Chess coach",
+  "Time's man of the year 1938",
+  "FIDE Aware Instructor",
 ] as const;
 
-// [icon, title, desc, price, duration, features, badge?]
+// [icon, title, desc, price, duration, features, ctaText, ctaLink, badge?]
 const individualLessons = [
-  ["⚡", "Quick Session", "Perfect for focused skill building", 30, "30 min", [
-    "Targeted practice",
-    "Quick game review",
-    "Training guidance",
-  ]],
-  ["♛", "Deep Dive", "Comprehensive coaching session", 40, "90 min", [
-    "In-depth analysis",
-    "Strategy development",
-    "Personalized lessons",
-  ], "MOST POPULAR"],
+  [
+    "⚡",
+    "Quick Session",
+    "Perfect for focused skill building",
+    30,
+    "30 min",
+    [
+      "Targeted practice",
+      "Quick game review",
+      "Training guidance",
+    ],
+    "Book Now",
+    "https://buy.stripe.com/payment",
+  ],
+  [
+    "♛",
+    "Deep Dive",
+    "Comprehensive coaching session",
+    40,
+    "90 min",
+    [
+      "In-depth analysis",
+      "Strategy development",
+      "Personalized lessons",
+    ],
+    "Book Now",
+    "https://buy.stripe.com/payment",
+    "MOST POPULAR",
+  ],
 ] as const;
 
 const groupClasses = [
@@ -38,13 +57,25 @@ const groupClasses = [
       "Diversified ideas and analysis",
       "Collaborative learning",
     ],
+    "Contact Us",
+    "#contact",
   ],
 ] as const;
 
 const allPrograms = [...individualLessons, ...groupClasses] as const;
 
 export const programs = allPrograms.map((
-  [icon, title, description, price, duration, features, badge],
+  [
+    icon,
+    title,
+    description,
+    price,
+    duration,
+    features,
+    ctaText,
+    ctaLink,
+    badge,
+  ],
 ) => ({
   id: title.toLowerCase().replace(/\s+/g, "-"),
   icon,
@@ -53,6 +84,8 @@ export const programs = allPrograms.map((
   price,
   duration,
   features,
+  ctaText,
+  ctaLink,
   highlighted: !!badge,
   badge,
 }));

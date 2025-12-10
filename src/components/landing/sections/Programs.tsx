@@ -11,8 +11,8 @@ export default function Programs() {
       <div className="container mx-auto px-4 md:px-8">
         <SectionHeader
           label="Training Programs"
-          title="Choose Your Training Plan"
-          description="Structured coaching programs designed to take your game to the next level"
+          title="Take the step for your next promotion"
+          description=""
         />
 
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
@@ -27,6 +27,8 @@ export default function Programs() {
               features={program.features}
               highlighted={program.highlighted}
               badge={program.badge}
+              ctaText={program.ctaText}
+              ctaLink={program.ctaLink}
             />
           ))}
         </div>

@@ -2,11 +2,13 @@ interface ProgramCardProps {
   icon: string;
   title: string;
   description: string;
-  price: number;
+  price: number | string;
   duration?: string;
   features: readonly string[];
   highlighted?: boolean;
   badge?: string;
+  ctaText?: string;
+  ctaLink?: string;
 }
 
 export default function ProgramCard({
@@ -18,6 +20,8 @@ export default function ProgramCard({
   features,
   highlighted = false,
   badge,
+  ctaText = "Get Started",
+  ctaLink = "#contact",
 }: ProgramCardProps) {
   return (
     <div
@@ -48,14 +52,14 @@ export default function ProgramCard({
         ))}
       </ul>
       <a
-        href="#contact"
+        href={ctaLink}
         className={`block w-full rounded-lg py-3 text-center font-semibold transition-all ${
           highlighted
             ? "bg-slate-900 text-white hover:bg-slate-800"
             : "border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white"
         }`}
       >
-        Get Started
+        {ctaText}
       </a>
     </div>
   );

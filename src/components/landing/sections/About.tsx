@@ -20,11 +20,10 @@ export default function About() {
     };
 
     animationFrameId = requestAnimationFrame(animate);
-
     return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
-  const scrollPercentage = ((offset % totalHeight) / totalHeight) * 100;
+  const offsetMod = offset % totalHeight;
 
   return (
     <section id="about" className="border-t border-slate-200 bg-white py-20">
@@ -59,7 +58,7 @@ export default function About() {
             >
               <div
                 className={styles["quote-scroller"]}
-                style={{ transform: `translateY(-${offset % totalHeight}px)` }}
+                style={{ transform: `translateY(-${offsetMod}px)` }}
               >
                 {[...testimonials, ...testimonials].map(
                   (testimonial, index) => (
@@ -77,12 +76,6 @@ export default function About() {
                   ),
                 )}
               </div>
-            </div>
-            <div className={styles["scrollbar-track"]}>
-              <div
-                className={styles["scrollbar-thumb"]}
-                style={{ top: `${scrollPercentage}%` }}
-              />
             </div>
           </div>
         </div>

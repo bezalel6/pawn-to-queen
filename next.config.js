@@ -12,8 +12,8 @@ const config = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === "production" ? "/pawn-to-queen" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/pawn-to-queen/" : "",
+  // Removed basePath and assetPrefix for custom domain (pawntoqueen.cc)
+  // If deploying without custom domain, set basePath: "/pawn-to-queen"
 
   /**
    * i18n is not compatible with static export (output: "export")

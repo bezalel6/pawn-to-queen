@@ -7,7 +7,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: -64;
 }
 
 .quote-item {
@@ -19,4 +18,23 @@
   justify-content: center;
   align-items: center;
   padding: 0 1rem;
+}
+
+.scrollbar-track {
+  position: absolute;
+  right: 8px;
+  top: 12px;
+  width: 2px;
+  height: 232px;
+  background-color: rgba(148, 163, 184, 0.2);
+  border-radius: 1px;
+}
+
+.scrollbar-thumb {
+  position: absolute;
+  width: 2px;
+  height: 46px;
+  background-color: rgba(180, 83, 9, 0.5);
+  border-radius: 1px;
+  transition: top 0.05s ease-out;
 }

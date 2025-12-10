@@ -5,18 +5,26 @@ import AchievementItem from "../AchievementItem";
 import styles from "./About.module.css";
 
 export default function About() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const quoteHeight = 256; // Height of each quote container (h-64 = 256px)
+  const [offset, setOffset] = useState(0);
+  const quoteHeight = 256;
+  const totalHeight = testimonials.length * quoteHeight;
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % (testimonials.length - 1));
-    }, 2500); // Scroll every 5 seconds
+    let animationFrameId: number;
+    let currentOffset = 0;
 
-    return () => clearInterval(interval);
+    const animate = () => {
+      currentOffset += 0.5;
+      setOffset(currentOffset);
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
-  const offset = currentIndex * quoteHeight;
+  const scrollPercentage = ((offset % totalHeight) / totalHeight) * 100;
 
   return (
     <section id="about" className="border-t border-slate-200 bg-white py-20">
@@ -50,23 +58,31 @@ export default function About() {
               className={`${styles["quote-container"]} overflow-hidden rounded-2xl border-1 border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100 p-12 text-center shadow-lg`}
             >
               <div
-                className={`${styles["quote-scroller"]} transition-transform duration-1000`}
-                style={{ transform: `translateY(-${offset}px)` }}
+                className={styles["quote-scroller"]}
+                style={{ transform: `translateY(-${offset % totalHeight}px)` }}
               >
-                {testimonials.map((testimonial, index) => (
-                  <div key={index} className={styles["quote-item"]}>
-                    <div className="mb-6 text-8xl"></div>
-                    <blockquote className="mb-4 text-xl font-medium text-slate-700 italic">
-                      &ldquo;{testimonial.quote}&rdquo;
-                    </blockquote>
-                    {testimonial.author && (
-                      <p className="text-sm font-semibold text-slate-600">
-                        — {testimonial.author}
-                      </p>
-                    )}
-                  </div>
-                ))}
+                {[...testimonials, ...testimonials].map(
+                  (testimonial, index) => (
+                    <div key={index} className={styles["quote-item"]}>
+                      <div className="mb-6 text-8xl"></div>
+                      <blockquote className="mb-4 text-xl font-medium text-slate-700 italic">
+                        &ldquo;{testimonial.quote}&rdquo;
+                      </blockquote>
+                      {testimonial.author && (
+                        <p className="text-sm font-semibold text-slate-600">
+                          — {testimonial.author}
+                        </p>
+                      )}
+                    </div>
+                  ),
+                )}
               </div>
+            </div>
+            <div className={styles["scrollbar-track"]}>
+              <div
+                className={styles["scrollbar-thumb"]}
+                style={{ top: `${scrollPercentage}%` }}
+              />
             </div>
           </div>
         </div>

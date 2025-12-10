@@ -6,9 +6,10 @@ export default function Footer() {
           <div className="flex items-center space-x-2">
             <span className="text-2xl">♔</span>
             <span className="font-semibold text-white">PawnToQueen</span>
+            <span className="text-sm text-slate-500">.cc</span>
           </div>
           <div className="text-sm text-slate-500">
-            © 2024 PawnToQueen. All rights reserved.
+            © 2025 PawnToQueen Chess Club. All rights reserved.
           </div>
         </div>
       </div>

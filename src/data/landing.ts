@@ -1,7 +1,7 @@
 // [value, label]
 export const stats = [
-  ["∞", "FIDE Rating"],
-  ["500,000+", "Students Trained"],
+  // ["∞", "FIDE Rating"],
+  ["100+", "Students Trained"],
   ["10+", "Years Experience"],
   ["95%", "Promotion Rate"],
 ] as const;
@@ -92,7 +92,7 @@ export const programs = allPrograms.map((
 
 // [icon, title, value]
 export const contactInfo = [
-  ["📧", "Email", "coach@pawntoqueen.com"],
+  ["📧", "Email", "coach@pawntoqueen.cc"],
   ["💬", "Discord", "PawnToQueen#0001"],
   ["⏰", "Availability", "Mon-Fri, 9AM-8PM EST"],
 ] as const;

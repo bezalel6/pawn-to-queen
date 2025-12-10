@@ -10,14 +10,14 @@ export default function Hero() {
       <div className="mx-auto max-w-4xl text-center">
         <div className="mb-6 inline-flex items-center space-x-2 rounded-full bg-amber-100 px-4 py-2 text-sm font-medium text-amber-900">
           <span>♕</span>
-          <span>Master-Level Coaching</span>
+          <span>Master-Level Chess Club</span>
         </div>
         <h1 className="mb-6 text-5xl leading-tight font-black text-slate-900 md:text-7xl">
           Pawn to Queen
         </h1>
         <p className="mb-8 text-xl text-slate-600 md:text-2xl">
-          Promote your chess with personalized coaching designed to unlock your
-          full potential.
+          Join our chess club and promote your game with personalized coaching
+          designed to unlock your full potential.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
@@ -34,7 +34,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="mt-16 flex flex-row flex-wrap justify-around gap-10 align-middle">
           {stats.map(([value, label]) => (
             <StatCard key={label} value={value} label={label} />
           ))}

@@ -1,7 +1,23 @@
+import { useState, useEffect } from "react";
 import { achievements } from "@/data/landing";
+import { testimonials } from "@/data/testimonials";
 import AchievementItem from "../AchievementItem";
+import styles from "./About.module.css";
 
 export default function About() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const quoteHeight = 256; // Height of each quote container (h-64 = 256px)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % (testimonials.length - 1));
+    }, 2500); // Scroll every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const offset = currentIndex * quoteHeight;
+
   return (
     <section id="about" className="border-t border-slate-200 bg-white py-20">
       <div className="container mx-auto px-4 md:px-8">
@@ -30,12 +46,27 @@ export default function About() {
             </div>
           </div>
           <div className="relative">
-            <div className="rounded-2xl border-1 border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100 p-12 text-center shadow-lg">
-              <div className="mb-6 text-8xl"></div>
-              <blockquote className="mb-4 text-xl font-medium text-slate-700 italic">
-                &ldquo;Every chess master was once a beginner. The difference is
-                they never gave up.&rdquo;
-              </blockquote>
+            <div
+              className={`${styles["quote-container"]} overflow-hidden rounded-2xl border-1 border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100 p-12 text-center shadow-lg`}
+            >
+              <div
+                className={`${styles["quote-scroller"]} transition-transform duration-1000`}
+                style={{ transform: `translateY(-${offset}px)` }}
+              >
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className={styles["quote-item"]}>
+                    <div className="mb-6 text-8xl"></div>
+                    <blockquote className="mb-4 text-xl font-medium text-slate-700 italic">
+                      &ldquo;{testimonial.quote}&rdquo;
+                    </blockquote>
+                    {testimonial.author && (
+                      <p className="text-sm font-semibold text-slate-600">
+                        — {testimonial.author}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -28,9 +28,14 @@ export default function CTASection() {
 
           <div className="mt-12 flex justify-center">
             {contactInfo.map(([icon, title, value]) => (
-              <div key={title} id="contact-card" className="w-full max-w-sm">
-                <ContactCard icon={icon} title={title} value={value} />
-              </div>
+              <ContactCard
+                key={title}
+                id="contact-card"
+                className="max-w-xs"
+                icon={icon}
+                title={title}
+                value={value}
+              />
             ))}
           </div>
         </div>

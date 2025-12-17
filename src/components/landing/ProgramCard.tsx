@@ -100,6 +100,19 @@ export default function ProgramCard({
       ) : (
         <a
           href={ctaLink ?? "#contact"}
+          onClick={(e) => {
+            if (ctaLink === "#contact" || ctaLink === undefined) {
+              e.preventDefault();
+              document.getElementById("contact")?.scrollIntoView();
+
+              const contactCard = document.getElementById("contact-card");
+              if (contactCard) {
+                contactCard.classList.remove("flash-animation");
+                void contactCard.offsetWidth; // Trigger reflow
+                contactCard.classList.add("flash-animation");
+              }
+            }
+          }}
           className="block w-full rounded-lg py-3 text-center font-semibold transition-all"
           style={{
             backgroundColor: highlighted

@@ -39,6 +39,17 @@ export default function Navigation() {
           </div>
           <a
             href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("contact")?.scrollIntoView();
+
+              const contactCard = document.getElementById("contact-card");
+              if (contactCard) {
+                contactCard.classList.remove("flash-animation");
+                void contactCard.offsetWidth; // Trigger reflow
+                contactCard.classList.add("flash-animation");
+              }
+            }}
             className="rounded-lg px-6 py-2 font-semibold text-white transition-all"
             style={{
               backgroundColor: `rgb(var(--button-primary))`,

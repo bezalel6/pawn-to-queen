@@ -34,6 +34,17 @@ export default function Hero() {
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("contact")?.scrollIntoView();
+
+              const contactCard = document.getElementById("contact-card");
+              if (contactCard) {
+                contactCard.classList.remove("flash-animation");
+                void contactCard.offsetWidth; // Trigger reflow
+                contactCard.classList.add("flash-animation");
+              }
+            }}
             className="w-full rounded-lg px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:shadow-xl sm:w-auto"
             style={{
               backgroundColor: `rgb(var(--button-primary))`,

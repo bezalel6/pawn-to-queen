@@ -5,7 +5,7 @@ export default function CTASection() {
   return (
     <section
       id="contact"
-      className="border-t py-20"
+      className="border-t py-20 transition-all duration-500"
       style={{
         borderColor: `rgba(var(--border-color), 0.2)`,
         backgroundColor: `rgb(var(--bg-secondary))`,
@@ -28,7 +28,7 @@ export default function CTASection() {
 
           <div className="mt-12 flex justify-center">
             {contactInfo.map(([icon, title, value]) => (
-              <div key={title} className="w-full max-w-sm">
+              <div key={title} id="contact-card" className="w-full max-w-sm">
                 <ContactCard icon={icon} title={title} value={value} />
               </div>
             ))}

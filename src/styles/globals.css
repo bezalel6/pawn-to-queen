@@ -109,3 +109,28 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Contact section base style */
+#contact {
+  scroll-margin-top: 80px;
+}
+
+/* Anchor target highlight animation */
+@keyframes flash-highlight {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px 10px rgba(34, 211, 238, 0.6);
+  }
+}
+
+#contact:target #contact-card {
+  animation: flash-highlight 2s ease-in-out;
+}
+
+#contact-card {
+  transition: all 0.3s ease;
+}

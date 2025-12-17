@@ -107,5 +107,4 @@ export const contactInfo = [
 export const navLinks = [
   ["#about", "About"],
   ["#programs", "Programs"],
-  ["#testimonials", "Testimonials"],
 ] as const;

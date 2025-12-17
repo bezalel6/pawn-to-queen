@@ -5,6 +5,8 @@ interface ContactCardProps {
 }
 
 export default function ContactCard({ icon, title, value }: ContactCardProps) {
+  const isEmail = title.toLowerCase() === "email";
+
   return (
     <div
       className="rounded-xl border p-6"
@@ -20,9 +22,19 @@ export default function ContactCard({ icon, title, value }: ContactCardProps) {
       >
         {title}
       </h4>
-      <p className="text-sm" style={{ color: `rgb(var(--text-secondary))` }}>
-        {value}
-      </p>
+      {isEmail ? (
+        <a
+          href={`mailto:${value}`}
+          className="text-sm underline decoration-2 underline-offset-2 transition-colors hover:opacity-80"
+          style={{ color: `rgb(var(--accent-primary))` }}
+        >
+          {value}
+        </a>
+      ) : (
+        <p className="text-sm" style={{ color: `rgb(var(--text-secondary))` }}>
+          {value}
+        </p>
+      )}
     </div>
   );
 }

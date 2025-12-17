@@ -12,7 +12,7 @@ export const achievements = [
   "99.89% Percentile",
 ] as const;
 
-// [icon, title, desc, price, duration, features, ctaText, ctaLink, badge?]
+// [icon, title, desc, price, duration, features, ctaText, paypalButtonId, badge?]
 const individualLessons = [
   [
     "⚡",
@@ -26,7 +26,7 @@ const individualLessons = [
       "Training guidance",
     ],
     "Book Now",
-    "https://buy.stripe.com/payment",
+    "USPSYBUGDBSMN",
   ],
   [
     "♛",
@@ -40,7 +40,7 @@ const individualLessons = [
       "Personalized lessons",
     ],
     "Book Now",
-    "https://buy.stripe.com/payment",
+    "QEKSXVXNZ4MXW",
     "MOST POPULAR",
   ],
 ] as const;
@@ -73,7 +73,7 @@ export const programs = allPrograms.map((
     duration,
     features,
     ctaText,
-    ctaLink,
+    ctaLinkOrButtonId,
     badge,
   ],
 ) => ({
@@ -85,7 +85,15 @@ export const programs = allPrograms.map((
   duration,
   features,
   ctaText,
-  ctaLink,
+  // If it starts with http or #, it's a link; otherwise it's a PayPal button ID
+  ctaLink:
+    ctaLinkOrButtonId.startsWith("http") || ctaLinkOrButtonId.startsWith("#")
+      ? ctaLinkOrButtonId
+      : undefined,
+  paypalButtonId:
+    !ctaLinkOrButtonId.startsWith("http") && !ctaLinkOrButtonId.startsWith("#")
+      ? ctaLinkOrButtonId
+      : undefined,
   highlighted: !!badge,
   badge,
 }));

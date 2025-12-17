@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-type Theme = "default" | "dark-slate" | "midnight-blue" | "forest" | "royal-purple";
+type Theme = "default" | "midnight-teal" | "midnight-indigo" | "midnight-navy" | "slate-blue";
 
 interface ThemeOption {
   id: Theme;
@@ -16,28 +16,28 @@ interface ThemeOption {
 const themes: ThemeOption[] = [
   {
     id: "default",
-    name: "Classic",
-    colors: { primary: "rgb(251 191 36)", secondary: "rgb(241 245 249)" },
-  },
-  {
-    id: "dark-slate",
-    name: "Dark Slate",
-    colors: { primary: "rgb(234 179 8)", secondary: "rgb(15 23 42)" },
-  },
-  {
-    id: "midnight-blue",
-    name: "Midnight",
+    name: "Midnight Blue",
     colors: { primary: "rgb(34 211 238)", secondary: "rgb(12 15 32)" },
   },
   {
-    id: "forest",
-    name: "Forest",
-    colors: { primary: "rgb(52 211 153)", secondary: "rgb(5 20 15)" },
+    id: "midnight-teal",
+    name: "Midnight Teal",
+    colors: { primary: "rgb(45 212 191)", secondary: "rgb(10 18 25)" },
   },
   {
-    id: "royal-purple",
-    name: "Royal",
-    colors: { primary: "rgb(167 139 250)", secondary: "rgb(23 15 35)" },
+    id: "midnight-indigo",
+    name: "Midnight Indigo",
+    colors: { primary: "rgb(129 140 248)", secondary: "rgb(15 12 28)" },
+  },
+  {
+    id: "midnight-navy",
+    name: "Midnight Navy",
+    colors: { primary: "rgb(96 165 250)", secondary: "rgb(8 12 28)" },
+  },
+  {
+    id: "slate-blue",
+    name: "Slate Blue",
+    colors: { primary: "rgb(56 189 248)", secondary: "rgb(15 18 28)" },
   },
 ];
 

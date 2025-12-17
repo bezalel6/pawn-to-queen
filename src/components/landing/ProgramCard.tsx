@@ -1,3 +1,5 @@
+import PayPalButton from "@/components/PayPalButton";
+
 interface ProgramCardProps {
   icon: string;
   title: string;
@@ -9,6 +11,7 @@ interface ProgramCardProps {
   badge?: string;
   ctaText?: string;
   ctaLink?: string;
+  paypalButtonId?: string;
 }
 
 export default function ProgramCard({
@@ -21,7 +24,8 @@ export default function ProgramCard({
   highlighted = false,
   badge,
   ctaText = "Get Started",
-  ctaLink = "#contact",
+  ctaLink,
+  paypalButtonId,
 }: ProgramCardProps) {
   return (
     <div
@@ -89,37 +93,43 @@ export default function ProgramCard({
           </li>
         ))}
       </ul>
-      <a
-        href={ctaLink}
-        className="block w-full rounded-lg py-3 text-center font-semibold transition-all"
-        style={{
-          backgroundColor: highlighted
-            ? `rgb(var(--button-primary))`
-            : "transparent",
-          color: highlighted ? "white" : `rgb(var(--text-primary))`,
-          border: highlighted
-            ? "none"
-            : `2px solid rgb(var(--button-primary))`,
-        }}
-        onMouseEnter={(e) => {
-          if (highlighted) {
-            e.currentTarget.style.backgroundColor = `rgb(var(--button-primary-hover))`;
-          } else {
-            e.currentTarget.style.backgroundColor = `rgb(var(--button-primary))`;
-            e.currentTarget.style.color = "white";
-          }
-        }}
-        onMouseLeave={(e) => {
-          if (highlighted) {
-            e.currentTarget.style.backgroundColor = `rgb(var(--button-primary))`;
-          } else {
-            e.currentTarget.style.backgroundColor = "transparent";
-            e.currentTarget.style.color = `rgb(var(--text-primary))`;
-          }
-        }}
-      >
-        {ctaText}
-      </a>
+      {paypalButtonId ? (
+        <div className="w-full">
+          <PayPalButton hostedButtonId={paypalButtonId} />
+        </div>
+      ) : (
+        <a
+          href={ctaLink ?? "#contact"}
+          className="block w-full rounded-lg py-3 text-center font-semibold transition-all"
+          style={{
+            backgroundColor: highlighted
+              ? `rgb(var(--button-primary))`
+              : "transparent",
+            color: highlighted ? "white" : `rgb(var(--text-primary))`,
+            border: highlighted
+              ? "none"
+              : `2px solid rgb(var(--button-primary))`,
+          }}
+          onMouseEnter={(e) => {
+            if (highlighted) {
+              e.currentTarget.style.backgroundColor = `rgb(var(--button-primary-hover))`;
+            } else {
+              e.currentTarget.style.backgroundColor = `rgb(var(--button-primary))`;
+              e.currentTarget.style.color = "white";
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (highlighted) {
+              e.currentTarget.style.backgroundColor = `rgb(var(--button-primary))`;
+            } else {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.color = `rgb(var(--text-primary))`;
+            }
+          }}
+        >
+          {ctaText}
+        </a>
+      )}
     </div>
   );
 }

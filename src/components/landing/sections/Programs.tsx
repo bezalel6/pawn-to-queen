@@ -33,6 +33,7 @@ export default function Programs() {
               badge={program.badge}
               ctaText={program.ctaText}
               ctaLink={program.ctaLink}
+              paypalButtonId={program.paypalButtonId}
             />
           ))}
         </div>

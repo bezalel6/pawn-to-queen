@@ -1,11 +1,14 @@
-import Testimonials from "@/components/Testimonials";
 import SectionHeader from "../SectionHeader";
 
 export default function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="border-t border-slate-200 bg-white py-20"
+      className="border-t py-20"
+      style={{
+        borderColor: `rgba(var(--border-color), 0.2)`,
+        backgroundColor: `rgb(var(--card-bg))`,
+      }}
     >
       <div className="container mx-auto px-4 md:px-8">
         <SectionHeader
@@ -15,8 +18,14 @@ export default function TestimonialsSection() {
         />
 
         <div className="mx-auto max-w-4xl">
-          <div className="rounded-2xl border-2 border-slate-200 bg-slate-50 p-8 shadow-sm">
-            <Testimonials />
+          <div
+            className="rounded-2xl border-2 p-8 shadow-sm"
+            style={{
+              borderColor: `rgba(var(--border-color), 0.2)`,
+              backgroundColor: `rgb(var(--bg-primary))`,
+            }}
+          >
+            {/* Testimonials component placeholder */}
           </div>
         </div>
       </div>

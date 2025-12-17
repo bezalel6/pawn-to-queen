@@ -26,22 +26,41 @@ export default function About() {
   const offsetMod = offset % totalHeight;
 
   return (
-    <section id="about" className="border-t border-slate-200 bg-white py-20">
+    <section
+      id="about"
+      className="border-t py-20"
+      style={{
+        borderColor: `rgba(var(--border-color), 0.2)`,
+        backgroundColor: `rgb(var(--card-bg))`,
+      }}
+    >
       <div className="container mx-auto px-4 md:px-8">
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center">
           <div>
-            <span className="mb-4 inline-block text-sm font-semibold tracking-wider text-amber-600 uppercase">
+            <span
+              className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider"
+              style={{ color: `rgb(var(--accent-primary))` }}
+            >
               About the Coach
             </span>
-            <h2 className="mb-6 text-4xl font-bold text-slate-900">
+            <h2
+              className="mb-6 text-4xl font-bold"
+              style={{ color: `rgb(var(--text-primary))` }}
+            >
               Your Path to Chess Mastery Starts Here
             </h2>
-            <p className="mb-4 text-lg text-slate-600">
+            <p
+              className="mb-4 text-lg"
+              style={{ color: `rgb(var(--text-secondary))` }}
+            >
               With over 10 years of competitive chess experience and a rating of
               2200+, I&apos;ve helped hundreds of players achieve their chess
               goals.
             </p>
-            <p className="mb-6 text-lg text-slate-600">
+            <p
+              className="mb-6 text-lg"
+              style={{ color: `rgb(var(--text-secondary))` }}
+            >
               My coaching method combines classical chess principles with modern
               analysis techniques, tailored to your unique learning style and
               objectives.
@@ -54,7 +73,11 @@ export default function About() {
           </div>
           <div className="relative">
             <div
-              className={`${styles["quote-container"]} overflow-hidden rounded-2xl border-1 border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100 p-12 text-center shadow-lg`}
+              className={`${styles["quote-container"]} overflow-hidden rounded-2xl border p-12 text-center shadow-lg`}
+              style={{
+                borderColor: `rgba(var(--border-color), 0.2)`,
+                background: `linear-gradient(to bottom right, rgb(var(--bg-primary)), rgb(var(--bg-secondary)))`,
+              }}
             >
               <div
                 className={styles["quote-scroller"]}
@@ -64,11 +87,17 @@ export default function About() {
                   (testimonial, index) => (
                     <div key={index} className={styles["quote-item"]}>
                       <div className="mb-6 text-8xl"></div>
-                      <blockquote className="mb-4 text-xl font-medium text-slate-700 italic">
+                      <blockquote
+                        className="mb-4 text-xl font-medium italic"
+                        style={{ color: `rgb(var(--text-secondary))` }}
+                      >
                         &ldquo;{testimonial.quote}&rdquo;
                       </blockquote>
                       {testimonial.author && (
-                        <p className="text-sm font-semibold text-slate-600">
+                        <p
+                          className="text-sm font-semibold"
+                          style={{ color: `rgb(var(--text-secondary))` }}
+                        >
                           — {testimonial.author}
                         </p>
                       )}

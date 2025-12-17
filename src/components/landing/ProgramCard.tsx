@@ -25,39 +25,98 @@ export default function ProgramCard({
 }: ProgramCardProps) {
   return (
     <div
-      className={`relative rounded-2xl border-2 bg-white p-8 shadow-sm transition-all ${
-        highlighted
-          ? "border-amber-500 shadow-lg"
-          : "border-slate-200 hover:border-amber-500 hover:shadow-lg"
-      }`}
+      className="relative rounded-2xl border-2 p-8 shadow-sm transition-all"
+      style={{
+        backgroundColor: `rgb(var(--card-bg))`,
+        borderColor: highlighted
+          ? `rgb(var(--accent-primary))`
+          : `rgba(var(--border-color), 0.2)`,
+      }}
+      onMouseEnter={(e) => {
+        if (!highlighted) {
+          e.currentTarget.style.borderColor = `rgb(var(--accent-primary))`;
+          e.currentTarget.style.boxShadow = "0 10px 15px -3px rgba(0,0,0,0.1)";
+        }
+      }}
+      onMouseLeave={(e) => {
+        if (!highlighted) {
+          e.currentTarget.style.borderColor = `rgba(var(--border-color), 0.2)`;
+          e.currentTarget.style.boxShadow = "0 1px 2px 0 rgba(0,0,0,0.05)";
+        }
+      }}
     >
       {badge && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-amber-500 px-4 py-1 text-xs font-bold text-white">
+        <div
+          className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-xs font-bold text-white"
+          style={{ backgroundColor: `rgb(var(--accent-primary))` }}
+        >
           {badge}
         </div>
       )}
       <div className="mb-4 text-4xl">{icon}</div>
-      <h3 className="mb-2 text-2xl font-bold text-slate-900">{title}</h3>
-      <p className="mb-6 text-slate-600">{description}</p>
+      <h3
+        className="mb-2 text-2xl font-bold"
+        style={{ color: `rgb(var(--text-primary))` }}
+      >
+        {title}
+      </h3>
+      <p className="mb-6" style={{ color: `rgb(var(--text-secondary))` }}>
+        {description}
+      </p>
       <div className="mb-6">
-        <div className="mb-2 text-4xl font-bold text-slate-900">${price}</div>
-        <div className="text-sm text-slate-500">{duration ?? "per session"}</div>
+        <div
+          className="mb-2 text-4xl font-bold"
+          style={{ color: `rgb(var(--text-primary))` }}
+        >
+          ${price}
+        </div>
+        <div className="text-sm" style={{ color: `rgb(var(--text-secondary))` }}>
+          {duration ?? "per session"}
+        </div>
       </div>
       <ul className="mb-8 space-y-3">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
-            <span className="mr-2 text-amber-600">•</span>
-            <span className="text-slate-700">{feature}</span>
+            <span
+              className="mr-2"
+              style={{ color: `rgb(var(--accent-primary))` }}
+            >
+              •
+            </span>
+            <span style={{ color: `rgb(var(--text-secondary))` }}>
+              {feature}
+            </span>
           </li>
         ))}
       </ul>
       <a
         href={ctaLink}
-        className={`block w-full rounded-lg py-3 text-center font-semibold transition-all ${
-          highlighted
-            ? "bg-slate-900 text-white hover:bg-slate-800"
-            : "border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white"
-        }`}
+        className="block w-full rounded-lg py-3 text-center font-semibold transition-all"
+        style={{
+          backgroundColor: highlighted
+            ? `rgb(var(--button-primary))`
+            : "transparent",
+          color: highlighted ? "white" : `rgb(var(--text-primary))`,
+          border: highlighted
+            ? "none"
+            : `2px solid rgb(var(--button-primary))`,
+        }}
+        onMouseEnter={(e) => {
+          if (highlighted) {
+            e.currentTarget.style.backgroundColor = `rgb(var(--button-primary-hover))`;
+          } else {
+            e.currentTarget.style.backgroundColor = `rgb(var(--button-primary))`;
+            e.currentTarget.style.color = "white";
+          }
+        }}
+        onMouseLeave={(e) => {
+          if (highlighted) {
+            e.currentTarget.style.backgroundColor = `rgb(var(--button-primary))`;
+          } else {
+            e.currentTarget.style.backgroundColor = "transparent";
+            e.currentTarget.style.color = `rgb(var(--text-primary))`;
+          }
+        }}
       >
         {ctaText}
       </a>

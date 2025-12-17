@@ -5,10 +5,18 @@ interface AchievementItemProps {
 export default function AchievementItem({ text }: AchievementItemProps) {
   return (
     <div className="flex items-center space-x-3">
-      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-100">
-        <span className="text-sm text-amber-700">✓</span>
+      <div
+        className="flex h-6 w-6 items-center justify-center rounded-full"
+        style={{ backgroundColor: `rgba(var(--accent-bg), 0.5)` }}
+      >
+        <span
+          className="text-sm"
+          style={{ color: `rgb(var(--accent-primary))` }}
+        >
+          ✓
+        </span>
       </div>
-      <span className="text-slate-700">{text}</span>
+      <span style={{ color: `rgb(var(--text-secondary))` }}>{text}</span>
     </div>
   );
 }

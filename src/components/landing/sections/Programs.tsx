@@ -6,7 +6,11 @@ export default function Programs() {
   return (
     <section
       id="programs"
-      className="border-t border-slate-200 bg-slate-50 py-20"
+      className="border-t py-20"
+      style={{
+        borderColor: `rgba(var(--border-color), 0.2)`,
+        backgroundColor: `rgb(var(--bg-primary))`,
+      }}
     >
       <div className="container mx-auto px-4 md:px-8">
         <SectionHeader

@@ -8,27 +8,59 @@ export default function Hero() {
       className="container mx-auto px-4 py-20 md:px-8 md:py-32"
     >
       <div className="mx-auto max-w-4xl text-center">
-        <div className="mb-6 inline-flex items-center space-x-2 rounded-full bg-amber-100 px-4 py-2 text-sm font-medium text-amber-900">
+        <div
+          className="mb-6 inline-flex items-center space-x-2 rounded-full px-4 py-2 text-sm font-medium"
+          style={{
+            backgroundColor: `rgb(var(--accent-bg))`,
+            color: `rgb(var(--accent-secondary))`,
+          }}
+        >
           <span>♕</span>
           <span>Master-Level Chess Club</span>
         </div>
-        <h1 className="mb-6 text-5xl leading-tight font-black text-slate-900 md:text-7xl">
+        <h1
+          className="mb-6 text-5xl font-black leading-tight md:text-7xl"
+          style={{ color: `rgb(var(--text-primary))` }}
+        >
           Pawn to Queen
         </h1>
-        <p className="mb-8 text-xl text-slate-600 md:text-2xl">
+        <p
+          className="mb-8 text-xl md:text-2xl"
+          style={{ color: `rgb(var(--text-secondary))` }}
+        >
           Join our chess club and promote your game with personalized coaching
           designed to unlock your full potential.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="#contact"
-            className="w-full rounded-lg bg-slate-900 px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:bg-slate-800 hover:shadow-xl sm:w-auto"
+            className="w-full rounded-lg px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:shadow-xl sm:w-auto"
+            style={{
+              backgroundColor: `rgb(var(--button-primary))`,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = `rgb(var(--button-primary-hover))`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = `rgb(var(--button-primary))`;
+            }}
           >
             Start Your Journey
           </a>
           <a
             href="#programs"
-            className="w-full rounded-lg border-2 border-slate-900 px-8 py-4 text-lg font-bold text-slate-900 transition-all hover:bg-slate-50 sm:w-auto"
+            className="w-full rounded-lg border-2 px-8 py-4 text-lg font-bold transition-all sm:w-auto"
+            style={{
+              borderColor: `rgb(var(--border-color))`,
+              color: `rgb(var(--text-primary))`,
+              backgroundColor: "transparent",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = `rgba(var(--accent-bg), 0.1)`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+            }}
           >
             View Programs
           </a>

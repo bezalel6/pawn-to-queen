@@ -92,9 +92,7 @@ export const programs = allPrograms.map((
 
 // [icon, title, value]
 export const contactInfo = [
-  ["📧", "Email", "coach@pawntoqueen.cc"],
-  ["💬", "Discord", "PawnToQueen#0001"],
-  ["⏰", "Availability", "Mon-Fri, 9AM-8PM EST"],
+  ["📧", "Email", "marshall@pawntoqueen.cc"],
 ] as const;
 
 // [href, label]

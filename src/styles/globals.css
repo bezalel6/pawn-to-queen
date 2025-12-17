@@ -5,6 +5,88 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+/* Theme Variables */
+:root {
+  /* Default Theme - Classic Light */
+  --bg-primary: 241 245 249; /* slate-100 */
+  --bg-secondary: 249 250 251; /* gray-50 */
+  --bg-tertiary: 250 250 250; /* zinc-100 */
+  --text-primary: 15 23 42; /* slate-900 */
+  --text-secondary: 71 85 105; /* slate-600 */
+  --accent-primary: 251 191 36; /* amber-400 */
+  --accent-secondary: 120 53 15; /* amber-900 */
+  --accent-bg: 254 243 199; /* amber-100 */
+  --button-primary: 15 23 42; /* slate-900 */
+  --button-primary-hover: 30 41 59; /* slate-800 */
+  --border-color: 15 23 42; /* slate-900 */
+  --card-bg: 255 255 255; /* white */
+  --chess-square: 15 23 42; /* slate-900 */
+}
+
+[data-theme="dark-slate"] {
+  --bg-primary: 15 23 42; /* slate-900 */
+  --bg-secondary: 30 41 59; /* slate-800 */
+  --bg-tertiary: 51 65 85; /* slate-700 */
+  --text-primary: 241 245 249; /* slate-100 */
+  --text-secondary: 203 213 225; /* slate-300 */
+  --accent-primary: 234 179 8; /* yellow-600 */
+  --accent-secondary: 250 204 21; /* yellow-400 */
+  --accent-bg: 113 63 18; /* yellow-900 */
+  --button-primary: 234 179 8; /* yellow-600 */
+  --button-primary-hover: 202 138 4; /* yellow-700 */
+  --border-color: 234 179 8; /* yellow-600 */
+  --card-bg: 30 41 59; /* slate-800 */
+  --chess-square: 234 179 8; /* yellow-600 */
+}
+
+[data-theme="midnight-blue"] {
+  --bg-primary: 12 15 32; /* Very dark blue */
+  --bg-secondary: 17 24 39; /* slate-900 */
+  --bg-tertiary: 30 41 59; /* slate-800 */
+  --text-primary: 219 234 254; /* blue-100 */
+  --text-secondary: 191 219 254; /* blue-200 */
+  --accent-primary: 34 211 238; /* cyan-400 */
+  --accent-secondary: 103 232 249; /* cyan-300 */
+  --accent-bg: 22 78 99; /* cyan-900 */
+  --button-primary: 6 182 212; /* cyan-500 */
+  --button-primary-hover: 8 145 178; /* cyan-600 */
+  --border-color: 34 211 238; /* cyan-400 */
+  --card-bg: 17 24 39; /* slate-900 */
+  --chess-square: 34 211 238; /* cyan-400 */
+}
+
+[data-theme="forest"] {
+  --bg-primary: 5 20 15; /* Very dark green */
+  --bg-secondary: 20 33 27; /* Dark green-gray */
+  --bg-tertiary: 30 50 42; /* Dark green */
+  --text-primary: 209 250 229; /* emerald-100 */
+  --text-secondary: 167 243 208; /* emerald-200 */
+  --accent-primary: 52 211 153; /* emerald-400 */
+  --accent-secondary: 110 231 183; /* emerald-300 */
+  --accent-bg: 6 78 59; /* emerald-900 */
+  --button-primary: 16 185 129; /* emerald-500 */
+  --button-primary-hover: 5 150 105; /* emerald-600 */
+  --border-color: 52 211 153; /* emerald-400 */
+  --card-bg: 20 33 27; /* Dark green-gray */
+  --chess-square: 52 211 153; /* emerald-400 */
+}
+
+[data-theme="royal-purple"] {
+  --bg-primary: 23 15 35; /* Very dark purple */
+  --bg-secondary: 35 25 52; /* Dark purple */
+  --bg-tertiary: 50 38 70; /* Medium dark purple */
+  --text-primary: 237 233 254; /* violet-100 */
+  --text-secondary: 221 214 254; /* violet-200 */
+  --accent-primary: 167 139 250; /* violet-400 */
+  --accent-secondary: 196 181 253; /* violet-300 */
+  --accent-bg: 76 29 149; /* violet-900 */
+  --button-primary: 139 92 246; /* violet-500 */
+  --button-primary-hover: 124 58 237; /* violet-600 */
+  --border-color: 167 139 250; /* violet-400 */
+  --card-bg: 35 25 52; /* Dark purple */
+  --chess-square: 167 139 250; /* violet-400 */
+}
+
 /* Custom animations */
 @keyframes scroll-vertical {
   0% {
